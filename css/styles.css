@@ -1,6 +1,6 @@
 @charset "utf-8";
-
 /* CSS Document */
+
 body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10pt;
@@ -18,7 +18,7 @@ ul, li {
 	color: #333;
 }
 a {
-	color: #6b3b04;
+	color: orange;
 	text-decoration: none;
 }
 a:hover, a:focus {
@@ -48,7 +48,6 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   text-align: center;
   text-transform: uppercase;
 }
-
 /* ====================== Navigation ====================== */
 nav {
   width: 100%;
@@ -98,7 +97,6 @@ nav h1 a {
     color: #01447e;
     text-decoration: underline;
 }
-
 /* ====================== Map ====================== */
 #map {
   height: 400px;
@@ -106,7 +104,6 @@ nav h1 a {
   background-color: #ccc;
 
 }
-
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   width: 100%;
@@ -146,6 +143,7 @@ nav h1 a {
   grid-row-gap: 5em;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
 
 #restaurants-list li {
   background-color: #fff;
@@ -282,41 +280,20 @@ nav h1 a {
   color: #666;
 }
 
-/* ====================== Responsiveness ====================== */
-
-@media screen and (max-width: 463px) {
-  .container {
-    margin: 30px 5px 0;
-  }
-  #restaurants-list li {
-    width: calc(100% - 30px);
+/* if i changed screen width to 1000 or over than 1000px it will work */
+@media screen and  (min-width: 430px) and (max-width: 1038px)  {
+  #restaurants-list {
+ grid-template-columns: 1fr 1fr  ;
   }
 }
 
-@media screen and (min-width: 464px) {
-  .container {
-    margin: 30px 15px 0px;
-  }
-  #restaurants-list li {
-    width: calc(50% - 30px);
+
+/* if i changed screen width to 1000 or over than 1000px it will work */
+@media screen and (max-width: 429px)  {
+  #restaurants-list {
+ grid-template-columns: 1fr  ;
+ padding: 0 10px 25px;
   }
 }
 
-@media screen and (min-width: 780px) {
-  #restaurants-list li {
-    width: calc(33.3333% - 30px);
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  #restaurants-list li {
-    width: calc(25% - 30px);
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  #restaurants-list li {
-    width: calc(20% - 30px);
-  }
-}
-
+/* Now it WORKS 
