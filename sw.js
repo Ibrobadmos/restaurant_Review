@@ -1,18 +1,16 @@
-let catchName = 'restaurant';
-
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(catchName).then((cache) => {
+ event.waitUntil(
+   caches.open('restaurant').then((cache) => {
      return cache.addAll([
        '/',
        '/index.html',
        '/restaurant.html',
        '/css/styles.css',
-       '/data/restaurants.json',
        '/js/dbhelper.js',
        '/js/main.js',
        '/js/restaurant_info.js',
-       '/js/sw_register.js',
+       '/data/restaurants.json',
+       '/img/',
        '/img/1.jpg',
        '/img/2.jpg',
        '/img/3.jpg',
@@ -24,16 +22,16 @@ self.addEventListener('install', (event) => {
        '/img/9.jpg',
        '/img/10.jpg',
      ]).then(() => {
-      console.log('All file sucessfuly cached!');
+      console.log('Finished caching all files!');
      }).catch((error) => {
-      console.log('Error while Catching: ', error);
+      console.log('Caching threw an error: ', error);
      })
    })
  );
 });
 
 self.addEventListener('activate', (event) => {
-  console.log('Service Worker Loading.....');
+  console.log('Activating service worker...');
 });
 
 self.addEventListener('fetch', (event) => {
